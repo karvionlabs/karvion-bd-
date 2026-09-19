@@ -1,0 +1,194 @@
+{
+  "name": "KARVION BD Dispatcher & Scraper",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "httpMethod": "POST",
+        "path": "karvion-dispatcher",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "name": "Webhook Receiver",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        100,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "1",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.body.action }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "send_email",
+              "output": 0
+            },
+            {
+              "value2": "send_telegram",
+              "output": 1
+            }
+          ]
+        },
+        "fallbackOutput": 2
+      },
+      "name": "Action Router",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        350,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "no-reply@karvion.bd",
+        "toEmail": "={{ $json.body.email }}",
+        "subject": "={{ $json.body.subject }}",
+        "text": "={{ $json.body.content }}",
+        "options": {}
+      },
+      "name": "Send Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        600,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.body.telegram_chat_id }}",
+        "text": "={{ $json.body.content }}",
+        "additionalFields": {}
+      },
+      "name": "Telegram Bot",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        600,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 2 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Daily Gov Data Scraper",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.gov.bd/v1/open-data/notices",
+        "options": {}
+      },
+      "name": "Fetch Gov Notices",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        350,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://fastapi_backend:8000/api/v1/vectorize",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "data",
+              "value": "={{ $json.data }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Send to FastAPI for Vector DB",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        600,
+        700
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Receiver": {
+      "main": [
+        [
+          {
+            "node": "Action Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Action Router": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Telegram Bot",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Daily Gov Data Scraper": {
+      "main": [
+        [
+          {
+            "node": "Fetch Gov Notices",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Gov Notices": {
+      "main": [
+        [
+          {
+            "node": "Send to FastAPI for Vector DB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}

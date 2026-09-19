@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Prime Minister's Education Assistance Trust Scholarship 2026",
+    "content": "Prime Minister's Education Assistance Trust (PMEAT) provides stipends for poor and meritorious students in Bangladesh for the 2026 academic year. Eligibility: Minimum GPA 4.0 in HSC, poor financial background. Required documents: NID or Birth Certificate, Academic Transcripts, Chairman Certificate for Income (2026 updated). Application Deadline for 2026: 31 December 2026.",
+    "agency_name": "Government of Bangladesh",
+    "source_url": "https://pmeat.teletalk.com.bd/",
+    "service_category": "Student"
+  },
+  {
+    "title": "MEXT Scholarship for Bangladeshi Students",
+    "content": "The Government of Japan offers MEXT Scholarships to Bangladeshi students for postgraduate studies. Eligibility: IELTS 6.5+, Minimum CGPA 3.20. Documents required: Research Proposal, 2 Recommendation Letters, Attested Transcripts. The deadline is usually in May every year.",
+    "agency_name": "Government of Japan",
+    "source_url": "https://www.bd.emb-japan.go.jp/",
+    "service_category": "Student"
+  },
+  {
+    "title": "DNCRP Complaint Filing Guidelines",
+    "content": "Any consumer can file a complaint against anti-consumer rights practices (e.g., adulterated food, overpricing, fraud). Complaints must be submitted within 30 days of the incident. Requirements: Provide applicant's details, the accused organization's name/address, details of the incident, and evidence (e.g., cash memo, receipt, photo). Send email to nccc@dncrp.gov.bd or call 16121.",
+    "agency_name": "Directorate of National Consumer Rights Protection",
+    "source_url": "https://www.dncrp.com/",
+    "service_category": "Consumer"
+  },
+  {
+    "title": "myGov Portal - How to Apply for Citizen Services",
+    "content": "myGov is the central service portal of Bangladesh. To apply for a service: 1. Register or Login using NID and mobile number. 2. Search for the desired service (e.g., Birth Registration, Land Record). 3. Fill out the digital application form. 4. Attach necessary scanned documents. 5. Pay any required fees online via Ekpay. 6. Submit and track application status from the dashboard.",
+    "agency_name": "a2i, ICT Division",
+    "source_url": "https://www.mygov.bd/",
+    "service_category": "Citizen"
+  },
+  {
+    "title": "Agricultural Information Service (AIS) Guidelines",
+    "content": "For crop diseases, pest attacks, or fertilizer recommendations, farmers can contact the Agricultural Information Service (AIS). Call Krishi Call Center at 16123 for immediate assistance. Recommended fertilizer ratio for rice varies by soil type, generally Urea, TSP, MoP is used. Use authorized pesticides only.",
+    "agency_name": "Ministry of Agriculture",
+    "source_url": "https://moa.gov.bd/",
+    "service_category": "Farmer"
+  },
+  {
+    "title": "TCB and DAM Market Price Guidelines",
+    "content": "The Department of Agricultural Marketing (DAM) and Trading Corporation of Bangladesh (TCB) regulate and publish daily wholesale and retail prices of essential commodities (rice, lentil, onion, oil). Consumers can verify market prices online. If a seller charges more than the DAM fixed price, it is a punishable offense.",
+    "agency_name": "Department of Agricultural Marketing",
+    "source_url": "http://www.dam.gov.bd/",
+    "service_category": "Market"
+  },
+  {
+    "title": "Municipal Solid Waste and Plastic Recycling Request",
+    "content": "Citizens can request municipal waste collection and plastic recycling services through their local City Corporation portals. Segregate wet (organic) and dry (plastic, paper, glass) waste. For bulk scrap or e-waste collection, verified third-party collectors can be scheduled via city service hotlines.",
+    "agency_name": "City Corporation Waste Management",
+    "source_url": "https://www.dscc.gov.bd/",
+    "service_category": "Waste"
+  }
+]

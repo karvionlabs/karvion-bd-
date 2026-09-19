@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Prime Minister's Education Assistance Trust Scholarship",
+    "provider": "Government of Bangladesh",
+    "education_level": "Undergraduate",
+    "stream": "Any",
+    "country": "Bangladesh",
+    "deadline": "2026-11-30",
+    "eligibility": "Minimum GPA 4.0 in HSC, poor financial background",
+    "documents": ["NID or Birth Certificate", "Academic Transcripts", "Chairman Certificate for Income"],
+    "link": "http://www.pmeat.gov.bd/"
+  },
+  {
+    "name": "MEXT Scholarship",
+    "provider": "Government of Japan",
+    "education_level": "Postgraduate",
+    "stream": "Science, Engineering, IT",
+    "country": "Japan",
+    "deadline": "2026-05-15",
+    "eligibility": "IELTS 6.5+, Minimum CGPA 3.20",
+    "documents": ["Research Proposal", "Recommendation Letters (2)", "Attested Transcripts"],
+    "link": "https://www.bd.emb-japan.go.jp/"
+  },
+  {
+    "name": "ICT Division Fellowship",
+    "provider": "ICT Division, Bangladesh",
+    "education_level": "Postgraduate, PhD",
+    "stream": "Computer Science, AI, IT",
+    "country": "Bangladesh",
+    "deadline": "2026-08-20",
+    "eligibility": "Working on innovative IT research, CGPA 3.50+",
+    "documents": ["Research Summary", "CV", "University Recommendation"],
+    "link": "https://ictd.gov.bd/"
+  }
+]
