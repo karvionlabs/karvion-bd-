@@ -123,7 +123,7 @@ export default function Home() {
       alert("আপনার ব্রাউজার ভয়েস ইনপুট সাপোর্ট করে না। দয়া করে গুগল ক্রোম ব্যবহার করুন।");
       return;
     }
-    const SpeechRecognition = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.lang = 'bn-BD';
     recognition.continuous = false;
